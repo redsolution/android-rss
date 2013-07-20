@@ -1,8 +1,5 @@
-.classpath
-.project
 .settings
 target
 
 bin/
 gen/
-project.properties
