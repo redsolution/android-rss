@@ -41,4 +41,17 @@ final class Integers {
 		}
 	}
 
+	/**
+	 * Parses string in HEX encoding as an integer.
+	 * 
+	 * @throws RSSFault
+	 *             if the string is not a valid integer
+	 */
+	static Integer parseHexInteger(String value) {
+		try {
+			return Long.valueOf(value, 16).intValue();
+		} catch (NumberFormatException e) {
+			throw new RSSFault(e);
+		}
+	}
 }

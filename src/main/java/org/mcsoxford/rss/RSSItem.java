@@ -25,6 +25,7 @@ public class RSSItem extends RSSBase {
   private final java.util.List<MediaThumbnail> thumbnails;
   private String content;
 	private MediaEnclosure enclosure;
+	private Integer color;
 
   /* Internal constructor for RSSHandler */
   RSSItem(byte categoryCapacity, byte thumbnailCapacity) {
@@ -64,6 +65,14 @@ public class RSSItem extends RSSBase {
 
 	void setEnclosure(MediaEnclosure enclosure) {
 		this.enclosure = enclosure;
+	}
+
+	public Integer getColor() {
+		return color;
+	}
+
+	void setColor(Integer color) {
+		this.color = color;
 	}
 
 }

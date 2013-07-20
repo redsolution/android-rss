@@ -283,6 +283,19 @@ class RSSHandler extends org.xml.sax.helpers.DefaultHandler {
 		}
 	};
 
+	/**
+	 * Setter for custom &lt;color&gt; element inside an &lt;item&gt; element.
+	 */
+	private final Setter SET_COLOR = new ContentSetter() {
+		@Override
+		public void set(String color) {
+			final Integer value = Integers.parseHexInteger(color);
+			if (item != null) {
+				item.setColor(value);
+			}
+		}
+	};
+
   /**
    * Use configuration to optimize initial capacities of collections
    */
@@ -308,6 +321,7 @@ class RSSHandler extends org.xml.sax.helpers.DefaultHandler {
 		setters.put("lastBuildDate", SET_LAST_BUILE_DATE);
 		setters.put("ttl", SET_TTL);
 		setters.put("enclosure", SET_ENCLOSURE);
+		setters.put("color", SET_COLOR);
   }
 
   /**
